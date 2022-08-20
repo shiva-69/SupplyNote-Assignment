@@ -35,7 +35,9 @@ export const SignUp = () => {
         })
         .then((res) => {
             res.json();
-            
+            if(!res.ok){
+                throw console.error();
+            }
         })
         .then((res) => {
             console.log(res)

@@ -18,16 +18,18 @@ const handleSubmit = () => {
     fetch("http://localhost:3001/login", {
         method: "POST",
         body: JSON.stringify(user),
-        headers: {
+        headers : {
             "content-type" : "application/json"
         }
     })
-    .then((res) => res.json())
+    .then((res) => (
+        res.json()
+    ))
     .then((res) => {
-        console.log(res)
+        console.log(res);
         navigate("/")
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err)) 
 }
 
   const handleEmail = (e) => {
